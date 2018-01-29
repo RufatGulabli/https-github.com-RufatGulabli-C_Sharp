@@ -12,7 +12,7 @@ namespace TrainReservationWinForms
 {
 
 
-public partial class Form1 : Form
+    public partial class Form1 : Form
     {
         int adult = 0;
         int children = 0;
@@ -30,10 +30,10 @@ public partial class Form1 : Form
             monthCalendar2.MaxDate = DateTime.Now.AddYears(1);
             txtBoxDeparture.ForeColor = Color.DarkGray;
             txtBoxDeparture.Font = new Font("Century Gothic", 10f);
-            txtBoxDeparture.Text = " - departure date - ";
+            txtBoxDeparture.Text = "DD/MM/YYYY";
             txtBoxReturn.Font = new Font("Century Gothic", 10f);
             txtBoxReturn.ForeColor = Color.DarkGray;
-            txtBoxReturn.Text = " - return date - ";
+            txtBoxReturn.Text = "DD/MM/YYYY";
             panelPassenger.Visible = false;
             btnMinusAdult.Enabled = false;
             btnMinusChild.Enabled = false;
@@ -56,7 +56,7 @@ public partial class Form1 : Form
         {
             txtBoxPassenger.Visible = false;
             label12.Visible = false;
-            monthCalendar1.Location = new Point(17, 149);
+            monthCalendar1.Location = new Point(63, 183);
             monthCalendar1.Visible = true;
             monthCalendar2.Visible = false;
             panelPassenger.Visible = false;
@@ -76,7 +76,7 @@ public partial class Form1 : Form
 
         private void btnCalendar2_Click(object sender, EventArgs e)
         {
-            monthCalendar2.Location = new Point(222, 149);
+            monthCalendar2.Location = new Point(264, 183);
             monthCalendar1.Visible = false;
             monthCalendar2.Visible = true;
             panelPassenger.Visible = false;
@@ -98,7 +98,7 @@ public partial class Form1 : Form
             {
                 txtBoxDeparture.ForeColor = Color.DarkGray;
                 txtBoxDeparture.Font = new Font("Century Gothic", 10f);
-                txtBoxDeparture.Text = " - departure date - ";
+                txtBoxDeparture.Text = "DD/MM/YYYY";
             }
 
         }
@@ -110,13 +110,13 @@ public partial class Form1 : Form
             {
                 txtBoxReturn.Font = new Font("Century Gothic", 10f);
                 txtBoxReturn.ForeColor = Color.DarkGray;
-                txtBoxReturn.Text = " - return date - ";
+                txtBoxReturn.Text = "DD/MM/YYYY";
             }
         }
 
         private void txtBoxDeparture_Enter(object sender, EventArgs e)
         {
-            if(txtBoxDeparture.Text.Equals(" - departure date - "))
+            if(txtBoxDeparture.Text.Equals("DD/MM/YYYY"))
             {
                 txtBoxDeparture.Text = "";
                 txtBoxDeparture.ForeColor = Color.Black;
@@ -127,7 +127,7 @@ public partial class Form1 : Form
 
         private void txtBoxReturn_Enter(object sender, EventArgs e)
         {
-            if (txtBoxReturn.Text.Equals(" - return date - "))
+            if (txtBoxReturn.Text.Equals("DD/MM/YYYY"))
             {
                 txtBoxReturn.Text = "";
                 txtBoxReturn.ForeColor = Color.Black;
@@ -153,6 +153,7 @@ public partial class Form1 : Form
 
         private void btnPlusAdult_Click(object sender, EventArgs e)
         {
+            if (checkPassengerCount(sender)) return;
             adult++;
             labelAdult.Text = adult.ToString();
             btnMinusAdult.Enabled = true;
@@ -161,6 +162,7 @@ public partial class Form1 : Form
 
         private void btnPlusChild_Click(object sender, EventArgs e)
         {
+            if (checkPassengerCount(sender)) return;
             children++;
             labelChild.Text = children.ToString();
             btnMinusChild.Enabled = true;
@@ -182,6 +184,8 @@ public partial class Form1 : Form
 
         private void btnMinusAdult_Click(object sender, EventArgs e)
         {
+            if (txtBoxPassenger.Text == "")
+                return;
             if (adult == infant && adult != 0)
             {
                 infant--;
@@ -192,24 +196,31 @@ public partial class Form1 : Form
             if (adult == 0)
                 btnMinusAdult.Enabled = false;
             txtBoxPassenger.Text = (adult + children + infant).ToString();
+            changeBTNEnableCondition();
         }
 
         private void btnMinusChild_Click(object sender, EventArgs e)
         {
+            if (txtBoxPassenger.Text == "")
+                return;
             children--;
             labelChild.Text = children.ToString();
             if (children == 0)
                 btnMinusChild.Enabled = false;
             txtBoxPassenger.Text = (adult + children + infant).ToString();
+            changeBTNEnableCondition();
         }
 
         private void btnMinusInfant_Click(object sender, EventArgs e)
         {
+            if (txtBoxPassenger.Text == "")
+                return;
             infant--;
             labelInfant.Text = infant.ToString();
             if (infant == 0)
                 btnMinusInfant.Enabled = false;
             txtBoxPassenger.Text = (adult + children + infant).ToString();
+            changeBTNEnableCondition();
         }
 
         private void panel8_Click(object sender, EventArgs e)
@@ -245,6 +256,14 @@ public partial class Form1 : Form
         private void BTNSearch_Click(object sender, EventArgs e)
         {
             panelPassenger.Visible = false;
+            monthCalendar1.Visible = false;
+            monthCalendar2.Visible = false;
+            var instance = TimeTable.GetInstance;
+            Controls.Add(instance);
+            instance.Location = new Point(0, 111);
+            panel2.BackColor = Color.ForestGreen;
+            TimeTable.GetInstance.BringToFront();
+
         }
 
         private void btnCalendar1_Leave(object sender, EventArgs e)
@@ -252,6 +271,33 @@ public partial class Form1 : Form
             label12.Visible = true;
             txtBoxPassenger.Visible = true;
         }
+
+        private void monthCalendar2_Leave(object sender, EventArgs e)
+        {
+            monthCalendar2.Visible = false;
+        }
+
+        private bool checkPassengerCount(object sender)
+        {
+            var button = sender as Button;
+            if (adult + children >= 4)
+            {
+                button.Enabled = false;
+                toolTip2.Show("Passenger count must not exceed 4", panelPassenger, 200, 10, 3000);
+                return true;
+            }
+            return false;
+        }
+
+        private void changeBTNEnableCondition()
+        {
+            if(adult + children < 4)
+            {
+                btnPlusAdult.Enabled = true;
+                btnPlusChild.Enabled = true;
+            }
+        }
+
     }
 
 }
