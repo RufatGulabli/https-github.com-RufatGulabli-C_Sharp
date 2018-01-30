@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace TrainReservationWinForms
@@ -26,18 +26,15 @@ namespace TrainReservationWinForms
             comboBoxFrom.Text = " - select station - ";
             comboBoxTo.SelectedIndex = -1;
             comboBoxTo.Text = " - select station - ";
-            monthCalendar1.MaxDate = DateTime.Now.AddYears(1);
-            monthCalendar2.MaxDate = DateTime.Now.AddYears(1);
-            txtBoxDeparture.ForeColor = Color.DarkGray;
-            txtBoxDeparture.Font = new Font("Century Gothic", 10f);
-            txtBoxDeparture.Text = "DD/MM/YYYY";
-            txtBoxReturn.Font = new Font("Century Gothic", 10f);
-            txtBoxReturn.ForeColor = Color.DarkGray;
-            txtBoxReturn.Text = "DD/MM/YYYY";
             panelPassenger.Visible = false;
             btnMinusAdult.Enabled = false;
             btnMinusChild.Enabled = false;
             btnMinusInfant.Enabled = false;
+            foreach (Stations Stations in Enum.GetValues(typeof(Stations)))
+            {
+                comboBoxFrom.Items.Add(Stations);
+                comboBoxTo.Items.Add(Stations);
+            }
         }
 
         private void ClearText(object sender, EventArgs e)
@@ -56,90 +53,18 @@ namespace TrainReservationWinForms
         {
             txtBoxPassenger.Visible = false;
             label12.Visible = false;
-            monthCalendar1.Location = new Point(63, 183);
-            monthCalendar1.Visible = true;
-            monthCalendar2.Visible = false;
             panelPassenger.Visible = false;
-        }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            txtBoxDeparture.ForeColor = Color.Black;
-            txtBoxDeparture.Font = new Font("Century Gothic", 11f);
-            txtBoxDeparture.Text = e.Start.ToShortDateString();
-            monthCalendar1.Visible = false;
-            monthCalendar2.MinDate = monthCalendar1.SelectionRange.Start;
-            panelPassenger.Visible = false;
-            txtBoxPassenger.Visible = true;
-            label12.Visible = true;
         }
 
         private void btnCalendar2_Click(object sender, EventArgs e)
         {
-            monthCalendar2.Location = new Point(264, 183);
-            monthCalendar1.Visible = false;
-            monthCalendar2.Visible = true;
-            panelPassenger.Visible = false;
-        }
-
-        private void monthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            txtBoxReturn.Font = new Font("Century Gothic", 11f);
-            txtBoxReturn.ForeColor = Color.Black;
-            txtBoxReturn.Text = e.Start.ToShortDateString();
-            monthCalendar2.Visible = false;
-            panelPassenger.Visible = false;
-        }
-
-        private void txtBoxDeparture_Leave(object sender, EventArgs e)
-        {
-            monthCalendar1.Visible = false;
-            if(txtBoxDeparture.Text == "")
-            {
-                txtBoxDeparture.ForeColor = Color.DarkGray;
-                txtBoxDeparture.Font = new Font("Century Gothic", 10f);
-                txtBoxDeparture.Text = "DD/MM/YYYY";
-            }
-
-        }
-
-        private void txtBoxReturn_Leave(object sender, EventArgs e)
-        {
-            monthCalendar2.Visible = false;
-            if (txtBoxReturn.Text == "")
-            {
-                txtBoxReturn.Font = new Font("Century Gothic", 10f);
-                txtBoxReturn.ForeColor = Color.DarkGray;
-                txtBoxReturn.Text = "DD/MM/YYYY";
-            }
-        }
-
-        private void txtBoxDeparture_Enter(object sender, EventArgs e)
-        {
-            if(txtBoxDeparture.Text.Equals("DD/MM/YYYY"))
-            {
-                txtBoxDeparture.Text = "";
-                txtBoxDeparture.ForeColor = Color.Black;
-                txtBoxDeparture.Font = new Font("Century Gothic", 11f);
-            }
-            panelPassenger.Visible = false;
-        }
-
-        private void txtBoxReturn_Enter(object sender, EventArgs e)
-        {
-            if (txtBoxReturn.Text.Equals("DD/MM/YYYY"))
-            {
-                txtBoxReturn.Text = "";
-                txtBoxReturn.ForeColor = Color.Black;
-                txtBoxReturn.Font = new Font("Century Gothic", 11f);
-            }
             panelPassenger.Visible = false;
         }
 
         private void ComboBoxLeave(object sender, EventArgs e)
         {
             var comboBox = (ComboBox)sender;
-            if(comboBox.Text.Contains(""))
+            if(comboBox.Text.Equals(""))
             {
                 comboBox.ForeColor = Color.DarkGray;
                 comboBox.Text = " - select station - ";
@@ -215,18 +140,19 @@ namespace TrainReservationWinForms
         {
             if (txtBoxPassenger.Text == "")
                 return;
-            infant--;
             labelInfant.Text = infant.ToString();
             if (infant == 0)
+            {
                 btnMinusInfant.Enabled = false;
+                return;
+            }
+            infant--;
             txtBoxPassenger.Text = (adult + children + infant).ToString();
             changeBTNEnableCondition();
         }
 
         private void panel8_Click(object sender, EventArgs e)
         {
-            monthCalendar1.Visible = false;
-            monthCalendar2.Visible = false;
             panelPassenger.Visible = false;
             txtBoxPassenger.Visible = true;
             label12.Visible = true;
@@ -235,8 +161,6 @@ namespace TrainReservationWinForms
         private void txtBoxPassenger_Click(object sender, EventArgs e)
         {
             panelPassenger.Visible = true;
-            monthCalendar1.Visible = false;
-            monthCalendar2.Visible = false;
         }
 
         private void panelPassenger_Leave(object sender, EventArgs e)
@@ -255,27 +179,28 @@ namespace TrainReservationWinForms
 
         private void BTNSearch_Click(object sender, EventArgs e)
         {
-            panelPassenger.Visible = false;
-            monthCalendar1.Visible = false;
-            monthCalendar2.Visible = false;
-            var instance = TimeTable.GetInstance;
-            Controls.Add(instance);
-            instance.Location = new Point(0, 111);
-            panel2.BackColor = Color.ForestGreen;
-            TimeTable.GetInstance.BringToFront();
+            try
+            {
+                panelPassenger.Visible = false;
+                if (panel8.Controls.OfType<ComboBox>().Any(x => x.Text.Contains("select")) ||
+                    !panel8.Controls.OfType<RadioButton>().Any(x => x.Checked) ||
+                    checkBox1.CheckState == CheckState.Unchecked ||
+                    panel8.Controls.OfType<TextBox>().Any(x => x.Text is null || x.Text.Equals("DD/MM/YYYY")))
+                    throw new Exception("Please fill all details");
+
+                var instance = TimeTable.GetInstance;
+                Controls.Add(instance);
+                instance.Location = new Point(0, 111);
+                panel2.BackColor = Color.ForestGreen;
+                TimeTable.GetInstance.BringToFront();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
-        private void btnCalendar1_Leave(object sender, EventArgs e)
-        {
-            label12.Visible = true;
-            txtBoxPassenger.Visible = true;
-        }
-
-        private void monthCalendar2_Leave(object sender, EventArgs e)
-        {
-            monthCalendar2.Visible = false;
-        }
 
         private bool checkPassengerCount(object sender)
         {
