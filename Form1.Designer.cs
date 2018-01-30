@@ -55,6 +55,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtBoxPassenger = new System.Windows.Forms.TextBox();
             this.panelPassenger = new System.Windows.Forms.Panel();
@@ -78,8 +80,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel8.SuspendLayout();
@@ -152,66 +152,66 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(121, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 18);
+            this.label1.Size = new System.Drawing.Size(55, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Search";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
             this.label2.Location = new System.Drawing.Point(218, 78);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 18);
+            this.label2.Size = new System.Drawing.Size(98, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Choose Train";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
             this.label3.Location = new System.Drawing.Point(353, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 18);
+            this.label3.Size = new System.Drawing.Size(79, 18);
             this.label3.TabIndex = 1;
             this.label3.Text = "Passenger";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
             this.label4.Location = new System.Drawing.Point(487, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 18);
+            this.label4.Size = new System.Drawing.Size(38, 18);
             this.label4.TabIndex = 1;
             this.label4.Text = "Seat";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
             this.label5.Location = new System.Drawing.Point(590, 78);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 18);
+            this.label5.Size = new System.Drawing.Size(66, 18);
             this.label5.TabIndex = 1;
             this.label5.Text = "Payment";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
             this.label6.Location = new System.Drawing.Point(690, 78);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 18);
+            this.label6.Size = new System.Drawing.Size(93, 18);
             this.label6.TabIndex = 1;
             this.label6.Text = "Confirmation";
             // 
@@ -219,11 +219,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.label7.Location = new System.Drawing.Point(12, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 32);
+            this.label7.Size = new System.Drawing.Size(102, 31);
             this.label7.TabIndex = 1;
             this.label7.Text = "TRAIN";
             // 
@@ -241,6 +241,7 @@
             // 
             this.comboBoxTo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxTo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxTo.ForeColor = System.Drawing.Color.DarkGray;
@@ -267,6 +268,7 @@
             // 
             this.comboBoxFrom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxFrom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBoxFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBoxFrom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxFrom.ForeColor = System.Drawing.Color.DarkGray;
@@ -318,6 +320,7 @@
             this.radioBTNRoundTrip.TabStop = true;
             this.radioBTNRoundTrip.Text = "Round Trip";
             this.radioBTNRoundTrip.UseVisualStyleBackColor = false;
+            this.radioBTNRoundTrip.CheckedChanged += new System.EventHandler(this.radioBTNRoundTrip_CheckedChanged);
             // 
             // label8
             // 
@@ -387,6 +390,30 @@
             this.panel8.TabIndex = 0;
             this.panel8.Click += new System.EventHandler(this.panel8_Click);
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
+            this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker2.Location = new System.Drawing.Point(261, 160);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(147, 20);
+            this.dateTimePicker2.TabIndex = 14;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText;
+            this.dateTimePicker1.Location = new System.Drawing.Point(66, 160);
+            this.dateTimePicker1.MinDate = new System.DateTime(2018, 1, 30, 0, 0, 0, 0);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(147, 20);
+            this.dateTimePicker1.TabIndex = 14;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -405,6 +432,7 @@
             this.txtBoxPassenger.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtBoxPassenger.Location = new System.Drawing.Point(63, 220);
             this.txtBoxPassenger.Name = "txtBoxPassenger";
+            this.txtBoxPassenger.ReadOnly = true;
             this.txtBoxPassenger.Size = new System.Drawing.Size(145, 24);
             this.txtBoxPassenger.TabIndex = 8;
             this.txtBoxPassenger.Click += new System.EventHandler(this.txtBoxPassenger_Click);
@@ -429,7 +457,7 @@
             this.panelPassenger.Controls.Add(this.label13);
             this.panelPassenger.Location = new System.Drawing.Point(216, 220);
             this.panelPassenger.Name = "panelPassenger";
-            this.panelPassenger.Size = new System.Drawing.Size(193, 116);
+            this.panelPassenger.Size = new System.Drawing.Size(198, 116);
             this.panelPassenger.TabIndex = 10;
             this.panelPassenger.Visible = false;
             this.panelPassenger.Leave += new System.EventHandler(this.panelPassenger_Leave);
@@ -593,7 +621,7 @@
             this.btnCalendar2.FlatAppearance.BorderSize = 0;
             this.btnCalendar2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCalendar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalendar2.Location = new System.Drawing.Point(408, 154);
+            this.btnCalendar2.Location = new System.Drawing.Point(406, 156);
             this.btnCalendar2.Name = "btnCalendar2";
             this.btnCalendar2.Size = new System.Drawing.Size(30, 26);
             this.btnCalendar2.TabIndex = 7;
@@ -628,7 +656,7 @@
             this.btnCalendar1.FlatAppearance.BorderSize = 0;
             this.btnCalendar1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCalendar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalendar1.Location = new System.Drawing.Point(213, 159);
+            this.btnCalendar1.Location = new System.Drawing.Point(211, 156);
             this.btnCalendar1.Name = "btnCalendar1";
             this.btnCalendar1.Size = new System.Drawing.Size(30, 26);
             this.btnCalendar1.TabIndex = 5;
@@ -652,11 +680,11 @@
             // 
             this.label19.AutoSize = true;
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label19.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.label19.Location = new System.Drawing.Point(252, 17);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(166, 32);
+            this.label19.Size = new System.Drawing.Size(171, 31);
             this.label19.TabIndex = 1;
             this.label19.Text = "Reservation";
             // 
@@ -664,11 +692,11 @@
             // 
             this.label20.AutoSize = true;
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
             this.label20.Location = new System.Drawing.Point(135, 17);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(90, 32);
+            this.label20.Size = new System.Drawing.Size(94, 31);
             this.label20.TabIndex = 1;
             this.label20.Text = "Ticket";
             // 
@@ -676,28 +704,6 @@
             // 
             this.toolTip1.BackColor = System.Drawing.Color.Orange;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker1.Location = new System.Drawing.Point(66, 160);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(147, 20);
-            this.dateTimePicker1.TabIndex = 14;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker2.CalendarForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker2.CalendarMonthBackground = System.Drawing.SystemColors.MenuHighlight;
-            this.dateTimePicker2.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker2.Location = new System.Drawing.Point(261, 160);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(147, 20);
-            this.dateTimePicker2.TabIndex = 14;
             // 
             // Form1
             // 

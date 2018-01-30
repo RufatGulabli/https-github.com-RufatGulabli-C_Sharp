@@ -30,6 +30,9 @@ namespace TrainReservationWinForms
             btnMinusAdult.Enabled = false;
             btnMinusChild.Enabled = false;
             btnMinusInfant.Enabled = false;
+            label11.Visible = false;
+            dateTimePicker2.Visible = false;
+            btnCalendar2.Visible = false;
             foreach (Stations Stations in Enum.GetValues(typeof(Stations)))
             {
                 comboBoxFrom.Items.Add(Stations);
@@ -51,14 +54,14 @@ namespace TrainReservationWinForms
 
         private void btnCalendar1_Click(object sender, EventArgs e)
         {
-            txtBoxPassenger.Visible = false;
-            label12.Visible = false;
-            panelPassenger.Visible = false;
+            dateTimePicker1.Select();
+            SendKeys.Send("%{DOWN}");
         }
 
         private void btnCalendar2_Click(object sender, EventArgs e)
         {
-            panelPassenger.Visible = false;
+            dateTimePicker2.Select();
+            SendKeys.Send("%{DOWN}");
         }
 
         private void ComboBoxLeave(object sender, EventArgs e)
@@ -154,8 +157,6 @@ namespace TrainReservationWinForms
         private void panel8_Click(object sender, EventArgs e)
         {
             panelPassenger.Visible = false;
-            txtBoxPassenger.Visible = true;
-            label12.Visible = true;
         }
 
         private void txtBoxPassenger_Click(object sender, EventArgs e)
@@ -184,10 +185,10 @@ namespace TrainReservationWinForms
                 panelPassenger.Visible = false;
                 if (panel8.Controls.OfType<ComboBox>().Any(x => x.Text.Contains("select")) ||
                     !panel8.Controls.OfType<RadioButton>().Any(x => x.Checked) ||
-                    checkBox1.CheckState == CheckState.Unchecked ||
-                    panel8.Controls.OfType<TextBox>().Any(x => x.Text is null || x.Text.Equals("DD/MM/YYYY")))
+                    checkBox1.CheckState == CheckState.Unchecked)
                     throw new Exception("Please fill all details");
-
+                if (panel8.Controls.OfType<DateTimePicker>().Any(x => x.Value < DateTime.Now))
+                    throw new Exception("");
                 var instance = TimeTable.GetInstance;
                 Controls.Add(instance);
                 instance.Location = new Point(0, 111);
@@ -223,6 +224,26 @@ namespace TrainReservationWinForms
             }
         }
 
+        private void radioBTNRoundTrip_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioBTNRoundTrip.Checked)
+            {
+                label11.Visible = true;
+                dateTimePicker2.Visible = true;
+                btnCalendar2.Visible = true;
+            }
+            else
+            {
+                label11.Visible = false;
+                dateTimePicker2.Visible = false;
+                btnCalendar2.Visible = false;
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker2.MinDate = dateTimePicker1.Value.AddDays(1);
+        }
     }
 
 }
