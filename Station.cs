@@ -71,6 +71,7 @@ namespace TrainReservationWinForms
 
     public class Train
     {
+        public string TrainName { get; set; }
         public int TrainNo { get; set; }
         public int Capacity { get; set; }
         public int Wagon { get; set; }

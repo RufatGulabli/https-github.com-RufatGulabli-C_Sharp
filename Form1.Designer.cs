@@ -241,7 +241,6 @@
             // 
             this.comboBoxTo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxTo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxTo.ForeColor = System.Drawing.Color.DarkGray;
@@ -268,7 +267,6 @@
             // 
             this.comboBoxFrom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.comboBoxFrom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBoxFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBoxFrom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBoxFrom.ForeColor = System.Drawing.Color.DarkGray;

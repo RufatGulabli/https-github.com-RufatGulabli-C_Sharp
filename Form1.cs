@@ -14,9 +14,14 @@ namespace TrainReservationWinForms
 
     public partial class Form1 : Form
     {
-        int adult = 0;
-        int children = 0;
-        int infant = 0;
+        public static int adult = 0;
+        public static int children = 0;
+        public static int infant = 0;
+        public static Stations from;
+        public static Stations to;
+        public static DateTime departure;
+        public static DateTime arrival;
+        public static string OWorRT;
 
         public Form1()
         {
@@ -50,6 +55,7 @@ namespace TrainReservationWinForms
                 comboBox.Font = new Font("Verdana", 10f, FontStyle.Regular);
             }
             panelPassenger.Visible = false;
+            
         }
 
         private void btnCalendar1_Click(object sender, EventArgs e)
@@ -66,12 +72,25 @@ namespace TrainReservationWinForms
 
         private void ComboBoxLeave(object sender, EventArgs e)
         {
+            bool found = false;
             var comboBox = (ComboBox)sender;
             if(comboBox.Text.Equals(""))
             {
                 comboBox.ForeColor = Color.DarkGray;
                 comboBox.Text = " - select station - ";
             }
+            foreach (Stations item in Enum.GetValues(typeof(Stations)))
+            {
+                if (item.ToString().Equals(comboBox.Text))
+                {
+                    found = true;
+                    comboBox.BackColor = Color.White;
+                    return;
+                }
+            }
+            if (!found)
+                comboBox.BackColor = Color.Red;
+                
         }
 
         private void txtBoxPassenger_Enter(object sender, EventArgs e)
@@ -187,8 +206,17 @@ namespace TrainReservationWinForms
                     !panel8.Controls.OfType<RadioButton>().Any(x => x.Checked) ||
                     checkBox1.CheckState == CheckState.Unchecked)
                     throw new Exception("Please fill all details");
-                if (panel8.Controls.OfType<DateTimePicker>().Any(x => x.Value < DateTime.Now))
-                    throw new Exception("");
+                if (panel8.Controls.OfType<ComboBox>().Any(x => x.BackColor == Color.Red))
+                    throw new Exception("Please select Station");
+                if (comboBoxFrom.Text == comboBoxTo.Text)
+                    throw new Exception("Equal Stations were selected");
+                if (adult == 0)
+                    throw new Exception("At leat 1 Adult must travel");
+                from = (Stations)comboBoxFrom.SelectedItem;
+                to = (Stations)comboBoxTo.SelectedItem;
+                departure = dateTimePicker1.Value;
+                arrival = dateTimePicker2.Value;
+                OWorRT = panel8.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked).Text;
                 var instance = TimeTable.GetInstance;
                 Controls.Add(instance);
                 instance.Location = new Point(0, 111);
@@ -244,6 +272,7 @@ namespace TrainReservationWinForms
         {
             dateTimePicker2.MinDate = dateTimePicker1.Value.AddDays(1);
         }
+
     }
 
 }

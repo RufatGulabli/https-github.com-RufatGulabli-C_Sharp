@@ -9,10 +9,11 @@ namespace TrainReservationWinForms
 
     public class DataBase
     {
-        List<Train> Trains = new List<Train>
+        static List<Train> Trains = new List<Train>
         {
             new Train
             {
+                TrainName = "Bakı - Balakən",
                 TrainNo = 611,
                 Capacity = 200,
                 Wagon = 20,
@@ -29,6 +30,7 @@ namespace TrainReservationWinForms
             },
             new Train
             {
+                TrainName = "Bakı - Balakən",
                 TrainNo = 611,
                 Capacity = 200,
                 Wagon = 20,
@@ -45,6 +47,7 @@ namespace TrainReservationWinForms
             },
             new Train
             {
+                TrainName = "Bakı - Balakən",
                 TrainNo = 611,
                 Capacity = 200,
                 Wagon = 20,
@@ -61,6 +64,7 @@ namespace TrainReservationWinForms
             },
             new Train
             {
+                TrainName = "Bakı - Nabran",
                 TrainNo = 615,
                 Capacity = 180,
                 Wagon = 18,
@@ -89,6 +93,7 @@ namespace TrainReservationWinForms
             },
             new Train
             {
+                TrainName = "Bakı - Nabran",
                 TrainNo = 618,
                 Capacity = 230,
                 Wagon = 23,
@@ -100,6 +105,46 @@ namespace TrainReservationWinForms
                     { new Route (Stations.LƏNKƏRAN, Stations.ASTARA, new DateTime(2018,02,12,17,50,00), new DateTime(2018,02,12,19,55,00)), 180},
                 }
             },
+            new Train
+            {
+                TrainName = "Balakən - Bakı",
+                TrainNo = 611,
+                Capacity = 200,
+                Wagon = 20,
+                Stopovers = new Dictionary<Route, int>()
+                {
+                    { new Route(Stations.BALAKƏN, Stations.ZAQATALA, new DateTime(2018,02,12,08,40,00), new DateTime(2018,02,12,10,40,00)), 200},
+                    { new Route(Stations.ZAQATALA, Stations.QAX, new DateTime(2018,02,12,11,00,00), new DateTime(2018,02,12,12,30,00)), 200},
+                    { new Route(Stations.QAX, Stations.ŞƏKİ, new DateTime(2018,02,12,14,00,00), new DateTime(2018,02,12,16,30,00)), 200},
+                    { new Route(Stations.ŞƏKİ, Stations.İSMAYILLI, new DateTime(2018,02,12,16,50,00), new DateTime(2018,02,12,19,40,00)), 200},
+                    { new Route(Stations.İSMAYILLI, Stations.ŞAMAXI, new DateTime(2018,02,12,19,55,00), new DateTime(2018,02,12,21,35,00)), 200},
+                    { new Route(Stations.ŞAMAXI, Stations.SUMQAYIT, new DateTime(2018,02,12,23,30,00), new DateTime(2018,02,13,00,45,00)), 200},
+                    { new Route(Stations.SUMQAYIT, Stations.BAKI, new DateTime(2018,02,13,01,10,00), new DateTime(2018,02,13,02,05,00)), 200}
+                }
+            },
         };
+
+        public List<Train> GetSchedule(Stations from, Stations to, DateTime outbound)
+        {
+            List<Train> matchedTrains = new List<Train>();
+            bool departureStation = false, arrivalStation = false;
+            foreach (var train in Trains)
+            {
+                departureStation = false;
+                arrivalStation = false;
+                foreach (var route in train.Stopovers.Keys)
+                {
+                    if (route.From == from && (route.Departure.Day == outbound.Day && 
+                        route.Departure.Month == outbound.Month && route.Departure.Year == outbound.Year))
+                        departureStation = true;
+                    if (route.To == to)
+                        arrivalStation = true;
+                }
+                if (departureStation && arrivalStation)
+                    matchedTrains.Add(train);
+            }
+            return matchedTrains;
+                                       
+        }
     }
 }
