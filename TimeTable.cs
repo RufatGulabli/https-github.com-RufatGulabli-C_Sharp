@@ -52,9 +52,9 @@ namespace TrainReservationWinForms
                 panel2.Visible = false;
 
                 var list = schedule.GetSchedule(Form1.from, Form1.to, Form1.departure);
-                dataGridViewOutbound.DataSource = ConvertToDataTable(list, Form1.from, Form1.to);
                 if (list.Count > 0)
                 {
+                    dataGridViewOutbound.DataSource = ConvertToDataTable(list, Form1.from, Form1.to);
                     labelTrainNumber.Text = dataGridViewOutbound.SelectedRows[0].Cells[1].Value.ToString();
                     labelItin.Text = dataGridViewOutbound.SelectedRows[0].Cells[0].Value.ToString();
                     labelDepTime.Text = dataGridViewOutbound.SelectedRows[0].Cells[4].Value.ToString();
@@ -64,14 +64,25 @@ namespace TrainReservationWinForms
             }
             else
             {
-                var list = schedule.GetSchedule(Form1.to, Form1.from, Form1.arrival);
-                dataGridViewOutbound.DataSource = ConvertToDataTable(list, Form1.from, Form1.to);
-                if(list.Count > 0)
+                var listOutbound = schedule.GetSchedule(Form1.from, Form1.to, Form1.departure);
+                if (listOutbound.Count > 0)
                 {
+                    dataGridViewOutbound.DataSource = ConvertToDataTable(listOutbound, Form1.from, Form1.to);
                     labelTrainNumber.Text = dataGridViewOutbound.SelectedRows[0].Cells[1].Value.ToString();
                     labelItin.Text = dataGridViewOutbound.SelectedRows[0].Cells[0].Value.ToString();
                     labelDepTime.Text = dataGridViewOutbound.SelectedRows[0].Cells[4].Value.ToString();
                     labelArriveTime.Text = dataGridViewOutbound.SelectedRows[0].Cells[5].Value.ToString();
+                }
+
+
+                var listInbound = schedule.GetSchedule(Form1.to, Form1.from, Form1.arrival);
+                if(listInbound.Count > 0)
+                {
+                    dataGridViewInbound.DataSource = ConvertToDataTable(listInbound, Form1.to, Form1.from);
+                    labelTrainNoreturn.Text = dataGridViewInbound.SelectedRows[0].Cells[1].Value.ToString();
+                    labelItinReturn.Text = dataGridViewInbound.SelectedRows[0].Cells[0].Value.ToString();
+                    labelDepReturn.Text = dataGridViewInbound.SelectedRows[0].Cells[4].Value.ToString();
+                    labelArrReturn.Text = dataGridViewInbound.SelectedRows[0].Cells[5].Value.ToString();
                 }
                 
             }
@@ -103,5 +114,12 @@ namespace TrainReservationWinForms
             return table;
         }
 
+        private void dataGridViewInbound_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            labelTrainNumber.Text = dataGridViewOutbound.SelectedRows[0].Cells[1].Value.ToString();
+            labelItin.Text = dataGridViewInbound.SelectedRows[0].Cells[0].Value.ToString();
+            labelDepTime.Text = dataGridViewInbound.SelectedRows[0].Cells[4].Value.ToString();
+            labelArriveTime.Text = dataGridViewInbound.SelectedRows[0].Cells[5].Value.ToString();
+        }
     }
 }
