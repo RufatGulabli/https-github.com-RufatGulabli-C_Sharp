@@ -13,37 +13,36 @@ namespace TrainReservationWinForms
     public partial class TimeTable : UserControl
     {
         DataBase schedule = new DataBase();
-
-        public TimeTable()
-        {
-            InitializeComponent();
-        }
+        Form1 form1; 
 
         private static TimeTable Instance;
 
-        public static TimeTable GetInstance
+        public static TimeTable GetInstance(Form1 form)
         {
-            get
+            if(Instance == null)
             {
-                if(Instance == null)
-                {
-                    Instance = new TimeTable();
-                    return Instance;
-                }
+                Instance = new TimeTable(form);
                 return Instance;
             }
+            return Instance;
+        }
+
+        public TimeTable(Form1 form)
+        {
+            InitializeComponent();
+            form1 = form;
         }
 
         private void TimeTable_Load(object sender, EventArgs e)
         {
             labelItinerary.ForeColor = Color.White;
-            labelItinerary.Text = Form1.from.ToString() + " - " + Form1.to.ToString() + " : "
-                + Form1.departure.ToShortDateString();
+            labelItinerary.Text = "Outbound : " + Form1.from.ToString() + " - " + Form1.to.ToString() + " ("
+                + Form1.departure.ToShortDateString() + ")";
             if(Form1.OWorRT != null)
             {
                 labelReturn.ForeColor = Color.White;
-                labelReturn.Text = Form1.to.ToString() + " - " + Form1.from.ToString() + " : "
-                + Form1.arrival.ToShortDateString();
+                labelReturn.Text = "Inbound : " + Form1.to.ToString() + " - " + Form1.from.ToString() + " ("
+                + Form1.arrival.ToShortDateString() + ")";
             }
             if (Form1.OWorRT.Equals("One Way"))
             {
@@ -157,10 +156,25 @@ namespace TrainReservationWinForms
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_NEXT_Click(object sender, EventArgs e)
         {
-            Controls.Add(PassengersControl.GetInstance);
-            PassengersControl.GetInstance.BringToFront();
+            if(Form1.OWorRT.Equals("One Way"))
+            {
+                if (dataGridViewOutbound.GetCellCount(DataGridViewElementStates.Selected) == 0)
+                    throw new Exception("Please choose Train");
+            }
+            else
+            {
+                if (dataGridViewOutbound.GetCellCount(DataGridViewElementStates.Selected) == 0)
+                    throw new Exception("Please choose Outbound Train");
+                if (dataGridViewInbound.GetCellCount(DataGridViewElementStates.Selected) == 0)
+                    throw new Exception("Please choose Inbound Train");
+            }
+            form1.panel3.BackColor = Color.ForestGreen;
+            var PassengerDetailsControl = PassengersControl.GetInstance(form1);
+            Controls.Add(PassengerDetailsControl);
+            PassengerDetailsControl.BringToFront();
         }
+
     }
 }

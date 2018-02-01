@@ -12,25 +12,29 @@ namespace TrainReservationWinForms
 {
     public partial class PassengersControl : UserControl
     {
-        public PassengersControl()
+        public Form1 form1;
+        public PassengersControl(Form1 form)
         {
             InitializeComponent();
+            form1 = form;
         }
 
-        private static PassengersControl Instance;
+        private static PassengersControl instance;
 
-        public static PassengersControl GetInstance
+        public static PassengersControl GetInstance(Form1 form)
         {
-            get
+            if (instance == null)
             {
-                if (Instance == null)
-                {
-                    Instance = new PassengersControl();
-                    return Instance;
-                }
-                else
-                    return Instance;
-            } 
+                instance = new PassengersControl(form);
+                return instance;
+            }
+            else
+                return instance;
+        }
+
+        private void textBoxBirth_TextChanged(object sender, EventArgs e)
+        {
+            monthCalendar1.Visible = true;
         }
     }
 }

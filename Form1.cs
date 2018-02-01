@@ -217,11 +217,11 @@ namespace TrainReservationWinForms
                 departure = dateTimePicker1.Value;
                 arrival = dateTimePicker2.Value;
                 OWorRT = panel8.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked).Text;
-                var instance = TimeTable.GetInstance;
+                var instance = TimeTable.GetInstance(this);
                 Controls.Add(instance);
                 instance.Location = new Point(0, 111);
                 panel2.BackColor = Color.ForestGreen;
-                TimeTable.GetInstance.BringToFront();
+                TimeTable.GetInstance(this).BringToFront();
             }
             catch(Exception ex)
             {

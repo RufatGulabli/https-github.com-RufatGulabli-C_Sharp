@@ -90,7 +90,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.ForestGreen;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Location = new System.Drawing.Point(98, 101);
+            this.panel1.Location = new System.Drawing.Point(96, 63);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(115, 4);
             this.panel1.TabIndex = 0;
@@ -99,7 +99,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel2.Location = new System.Drawing.Point(216, 101);
+            this.panel2.Location = new System.Drawing.Point(214, 63);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(115, 4);
             this.panel2.TabIndex = 0;
@@ -108,7 +108,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel3.Location = new System.Drawing.Point(334, 101);
+            this.panel3.Location = new System.Drawing.Point(332, 63);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(115, 4);
             this.panel3.TabIndex = 0;
@@ -117,7 +117,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel4.Location = new System.Drawing.Point(453, 101);
+            this.panel4.Location = new System.Drawing.Point(451, 63);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(115, 2);
             this.panel4.TabIndex = 0;
@@ -126,7 +126,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel5.Location = new System.Drawing.Point(453, 101);
+            this.panel5.Location = new System.Drawing.Point(451, 63);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(115, 4);
             this.panel5.TabIndex = 0;
@@ -135,7 +135,7 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel6.Location = new System.Drawing.Point(571, 101);
+            this.panel6.Location = new System.Drawing.Point(569, 63);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(115, 4);
             this.panel6.TabIndex = 0;
@@ -144,7 +144,7 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel7.Location = new System.Drawing.Point(689, 101);
+            this.panel7.Location = new System.Drawing.Point(687, 63);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(115, 4);
             this.panel7.TabIndex = 0;
@@ -154,7 +154,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(121, 78);
+            this.label1.Location = new System.Drawing.Point(119, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 18);
             this.label1.TabIndex = 0;
@@ -165,7 +165,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(218, 78);
+            this.label2.Location = new System.Drawing.Point(216, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 18);
             this.label2.TabIndex = 1;
@@ -176,7 +176,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(353, 78);
+            this.label3.Location = new System.Drawing.Point(351, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 18);
             this.label3.TabIndex = 1;
@@ -187,7 +187,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(487, 78);
+            this.label4.Location = new System.Drawing.Point(485, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 18);
             this.label4.TabIndex = 1;
@@ -198,7 +198,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(590, 78);
+            this.label5.Location = new System.Drawing.Point(588, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 18);
             this.label5.TabIndex = 1;
@@ -209,7 +209,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(690, 78);
+            this.label6.Location = new System.Drawing.Point(688, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 18);
             this.label6.TabIndex = 1;
@@ -221,7 +221,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(12, 9);
+            this.label7.Location = new System.Drawing.Point(4, 9);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 31);
             this.label7.TabIndex = 1;
@@ -380,11 +380,9 @@
             this.panel8.Controls.Add(this.comboBoxTo);
             this.panel8.Controls.Add(this.pictureBox1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 111);
-            this.panel8.MaximumSize = new System.Drawing.Size(919, 452);
-            this.panel8.MinimumSize = new System.Drawing.Size(919, 452);
+            this.panel8.Location = new System.Drawing.Point(0, 73);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(919, 452);
+            this.panel8.Size = new System.Drawing.Size(919, 490);
             this.panel8.TabIndex = 0;
             this.panel8.Click += new System.EventHandler(this.panel8_Click);
             // 
@@ -637,7 +635,7 @@
             this.BTNSearch.ForeColor = System.Drawing.Color.LightCyan;
             this.BTNSearch.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.BTNSearch.ImageKey = "(none)";
-            this.BTNSearch.Location = new System.Drawing.Point(173, 357);
+            this.BTNSearch.Location = new System.Drawing.Point(269, 394);
             this.BTNSearch.Name = "BTNSearch";
             this.BTNSearch.Size = new System.Drawing.Size(145, 35);
             this.BTNSearch.TabIndex = 9;
@@ -680,7 +678,7 @@
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.label19.Location = new System.Drawing.Point(252, 17);
+            this.label19.Location = new System.Drawing.Point(196, 9);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(171, 31);
             this.label19.TabIndex = 1;
@@ -692,7 +690,7 @@
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.label20.Location = new System.Drawing.Point(135, 17);
+            this.label20.Location = new System.Drawing.Point(107, 9);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(94, 31);
             this.label20.TabIndex = 1;
@@ -747,13 +745,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.Panel panel6;
+        public System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -771,7 +769,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel8;
+        public System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnCalendar1;
         private System.Windows.Forms.Button BTNSearch;
         private System.Windows.Forms.Label label12;

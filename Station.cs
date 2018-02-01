@@ -78,35 +78,53 @@ namespace TrainReservationWinForms
         public Dictionary<Route, int> Stopovers;
     }
 
+    public enum PassengerType
+    {
+        Adult,
+        Child
+    }
+
     public class Passenger
     {
         public string Fullname { get; set; }
         public string PassportNo { get; set; }
         public Citizenship Citizenship { get; set; }
         public DateTime BirthDate { get; set; }
-        public Gender Gender { get; set; }
+        public Gender Gender { get; set; } 
         public CreditCard PaymentCard { get; set; }
+        public PassengerType Type { get; set; }
+        public Infant Infant { get; set; }
 
         public Passenger(string fullname, string passportNo, Citizenship citizen,
-            DateTime birth, Gender sex, CreditCard card)
+            DateTime birth, Gender sex, PassengerType type)
         {
             Fullname = fullname;
             PassportNo = passportNo;
             Citizenship = citizen;
             BirthDate = birth;
             Gender = sex;
-            PaymentCard = card;
-        }
-
-        public Passenger(string fullname, string passportNo, Citizenship citizen,
-            DateTime birth, Gender sex)
-        {
-            Fullname = fullname;
-            PassportNo = passportNo;
-            Citizenship = citizen;
-            BirthDate = birth;
-            Gender = sex;
+            Type = type;
             PaymentCard = null;
+            Infant = null;
+        }
+    }
+
+    public class Infant
+    {
+        public string Fullname { get; set; }
+        public string PassportNo { get; set; }
+        public Citizenship Citizenship { get; set; }
+        public DateTime BirthDate { get; set; }
+        public Gender Gender { get; set; }
+
+        public Infant(string fullname, string passportNo, Citizenship citizenship,
+            DateTime birthDate, Gender gender)
+        {
+            Fullname = fullname;
+            PassportNo = passportNo;
+            Citizenship = citizenship;
+            BirthDate = birthDate;
+            Gender = gender;
         }
     }
 
