@@ -30,6 +30,23 @@ namespace TrainReservationWinForms
             },
             new Train
             {
+                TrainName = "Balakən - Bakı",
+                TrainNo = 614,
+                Capacity = 200,
+                Wagon = 20,
+                Stopovers = new Dictionary<Route, int>()
+                {
+                    { new Route(Stations.BALAKƏN, Stations.ZAQATALA, new DateTime(2018,02,12,18,20,00), new DateTime(2018,02,12,10,40,00)), 200},
+                    { new Route(Stations.ZAQATALA, Stations.QAX, new DateTime(2018,02,12,11,00,00), new DateTime(2018,02,12,12,30,00)), 200},
+                    { new Route(Stations.QAX, Stations.ŞƏKİ, new DateTime(2018,02,12,14,00,00), new DateTime(2018,02,12,16,30,00)), 200},
+                    { new Route(Stations.ŞƏKİ, Stations.İSMAYILLI, new DateTime(2018,02,12,16,50,00), new DateTime(2018,02,12,19,40,00)), 200},
+                    { new Route(Stations.İSMAYILLI, Stations.ŞAMAXI, new DateTime(2018,02,12,19,55,00), new DateTime(2018,02,12,21,35,00)), 200},
+                    { new Route(Stations.ŞAMAXI, Stations.SUMQAYIT, new DateTime(2018,02,12,23,30,00), new DateTime(2018,02,13,00,45,00)), 200},
+                    { new Route(Stations.SUMQAYIT, Stations.BAKI, new DateTime(2018,02,13,01,10,00), new DateTime(2018,02,13,04,30,00)), 200}
+                }
+            },
+            new Train
+            {
                 TrainName = "Bakı - Balakən",
                 TrainNo = 611,
                 Capacity = 200,
@@ -43,6 +60,23 @@ namespace TrainReservationWinForms
                     { new Route(Stations.ŞƏKİ, Stations.QAX, new DateTime(2018,02,06,08,00,00), new DateTime(2018,02,06,10,20,00)), 200},
                     { new Route(Stations.QAX, Stations.ZAQATALA, new DateTime(2018,02,06,10,50,00), new DateTime(2018,02,06,12,45,00)), 200},
                     { new Route(Stations.ZAQATALA, Stations.BALAKƏN, new DateTime(2018,02,06,13,30,00), new DateTime(2018,02,06,15,10,00)), 200}
+                }
+            },
+            new Train
+            {
+                TrainName = "Bakı - Balakən",
+                TrainNo = 613,
+                Capacity = 200,
+                Wagon = 20,
+                Stopovers = new Dictionary<Route, int>()
+                {
+                    { new Route(Stations.BAKI, Stations.SUMQAYIT, new DateTime(2018,02,05,05,30,00), new DateTime(2018,02,05,21,40,00)), 200},
+                    { new Route(Stations.SUMQAYIT, Stations.ŞAMAXI, new DateTime(2018,02,05,22,00,00), new DateTime(2018,02,05,23,40,00)), 200},
+                    { new Route(Stations.ŞAMAXI, Stations.İSMAYILLI, new DateTime(2018,02,06,00,10,00), new DateTime(2018,02,06,03,30,00)), 200},
+                    { new Route(Stations.İSMAYILLI, Stations.ŞƏKİ, new DateTime(2018,02,06,03,55,00), new DateTime(2018,02,06,05,40,00)), 200},
+                    { new Route(Stations.ŞƏKİ, Stations.QAX, new DateTime(2018,02,06,08,00,00), new DateTime(2018,02,06,10,20,00)), 200},
+                    { new Route(Stations.QAX, Stations.ZAQATALA, new DateTime(2018,02,06,10,50,00), new DateTime(2018,02,06,12,45,00)), 200},
+                    { new Route(Stations.ZAQATALA, Stations.BALAKƏN, new DateTime(2018,02,06,13,30,00), new DateTime(2018,02,06,12,20,00)), 200}
                 }
             },
             new Train

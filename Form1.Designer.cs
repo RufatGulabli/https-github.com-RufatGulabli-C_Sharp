@@ -730,6 +730,8 @@
             this.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(935, 602);
+            this.MinimumSize = new System.Drawing.Size(935, 602);
             this.Name = "Form1";
             this.Text = "Train Ticket Reservation";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
