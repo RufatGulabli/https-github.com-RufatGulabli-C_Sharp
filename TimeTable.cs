@@ -158,22 +158,29 @@ namespace TrainReservationWinForms
 
         private void btn_NEXT_Click(object sender, EventArgs e)
         {
-            if(Form1.OWorRT.Equals("One Way"))
+            try
             {
-                if (dataGridViewOutbound.GetCellCount(DataGridViewElementStates.Selected) == 0)
-                    throw new Exception("Please choose Train");
+                if (Form1.OWorRT.Equals("One Way"))
+                {
+                    if (dataGridViewOutbound.GetCellCount(DataGridViewElementStates.Selected) == 0)
+                        throw new Exception("Please choose Train");
+                }
+                else
+                {
+                    if (dataGridViewOutbound.GetCellCount(DataGridViewElementStates.Selected) == 0)
+                        throw new Exception("Please choose Outbound Train");
+                    if (dataGridViewInbound.GetCellCount(DataGridViewElementStates.Selected) == 0)
+                        throw new Exception("Please choose Inbound Train");
+                }
+                form1.panel3.BackColor = Color.ForestGreen;
+                var PassengerDetailsControl = PassengerDetails4.GetInstance(form1);
+                Controls.Add(PassengerDetailsControl);
+                PassengerDetailsControl.BringToFront();
             }
-            else
+            catch(Exception ex)
             {
-                if (dataGridViewOutbound.GetCellCount(DataGridViewElementStates.Selected) == 0)
-                    throw new Exception("Please choose Outbound Train");
-                if (dataGridViewInbound.GetCellCount(DataGridViewElementStates.Selected) == 0)
-                    throw new Exception("Please choose Inbound Train");
+                MessageBox.Show(ex.Message, "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            form1.panel3.BackColor = Color.ForestGreen;
-            var PassengerDetailsControl = PassengersControl.GetInstance(form1);
-            Controls.Add(PassengerDetailsControl);
-            PassengerDetailsControl.BringToFront();
         }
 
     }

@@ -43,7 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBoxTo = new System.Windows.Forms.ComboBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -76,8 +75,6 @@
             this.BTNSearch = new System.Windows.Forms.Button();
             this.btnCalendar1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -214,18 +211,6 @@
             this.label6.Size = new System.Drawing.Size(93, 18);
             this.label6.TabIndex = 1;
             this.label6.Text = "Confirmation";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(4, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 31);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "TRAIN";
             // 
             // pictureBox1
             // 
@@ -672,30 +657,6 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Passengers";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.label19.Location = new System.Drawing.Point(196, 9);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(171, 31);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Reservation";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(51)))));
-            this.label20.Location = new System.Drawing.Point(107, 9);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(94, 31);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "Ticket";
-            // 
             // toolTip1
             // 
             this.toolTip1.BackColor = System.Drawing.Color.Orange;
@@ -714,9 +675,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -758,7 +716,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBoxTo;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -787,8 +744,6 @@
         private System.Windows.Forms.Label labelInfant;
         private System.Windows.Forms.Label labelAdult;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtBoxPassenger;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolTip toolTip2;

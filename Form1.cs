@@ -26,7 +26,7 @@ namespace TrainReservationWinForms
         public Form1()
         {
             InitializeComponent();
-
+            this.StartPosition = FormStartPosition.CenterScreen;
             comboBoxFrom.SelectedIndex = -1;
             comboBoxFrom.Text = " - select station - ";
             comboBoxTo.SelectedIndex = -1;
@@ -218,8 +218,7 @@ namespace TrainReservationWinForms
                 arrival = dateTimePicker2.Value;
                 OWorRT = panel8.Controls.OfType<RadioButton>().FirstOrDefault(x => x.Checked).Text;
                 var instance = TimeTable.GetInstance(this);
-                Controls.Add(instance);
-                instance.Location = new Point(0, 111);
+                panel8.Controls.Add(instance);
                 panel2.BackColor = Color.ForestGreen;
                 TimeTable.GetInstance(this).BringToFront();
             }
