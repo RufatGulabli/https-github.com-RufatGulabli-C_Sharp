@@ -173,9 +173,40 @@ namespace TrainReservationWinForms
                         throw new Exception("Please choose Inbound Train");
                 }
                 form1.panel3.BackColor = Color.ForestGreen;
-                var PassengerDetailsControl = PassengerDetails4.GetInstance(form1);
-                Controls.Add(PassengerDetailsControl);
-                PassengerDetailsControl.BringToFront();
+
+                switch (Form1.adult + Form1.children)
+                {
+                    case 1:
+                        {
+                            var PassengerDetailsControl = PassengerDetails4.GetInstance(form1);
+                            Controls.Add(PassengerDetailsControl);
+                            PassengerDetailsControl.BringToFront();
+                            break;
+                        }
+                    case 2:
+                        {
+                            var PassengerDetailsControl = PassengerDetails4.GetInstance(form1);
+                            Controls.Add(PassengerDetailsControl);
+                            PassengerDetailsControl.BringToFront();
+                            break;
+                        }
+                    case 3:
+                        {
+                            var PassengerDetailsControl = PassengerDetails4.GetInstance(form1);
+                            Controls.Add(PassengerDetailsControl);
+                            PassengerDetailsControl.BringToFront();
+                            break;
+                        }
+                    case 4:
+                        {
+                            var PassengerDetailsControl = PassengerDetails4.GetInstance(form1);
+                            Controls.Add(PassengerDetailsControl);
+                            PassengerDetailsControl.BringToFront();
+                            break;
+                        }
+                    default:
+                        break;
+                }
             }
             catch(Exception ex)
             {

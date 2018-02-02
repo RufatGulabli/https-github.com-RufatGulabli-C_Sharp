@@ -76,21 +76,24 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(125, 20);
             this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btn_addInfant1
             // 
             this.btn_addInfant1.BackColor = System.Drawing.Color.Transparent;
             this.btn_addInfant1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_addInfant1.FlatAppearance.BorderSize = 0;
+            this.btn_addInfant1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_addInfant1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_addInfant1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btn_addInfant1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_addInfant1.Location = new System.Drawing.Point(119, 184);
+            this.btn_addInfant1.Location = new System.Drawing.Point(190, 190);
             this.btn_addInfant1.Name = "btn_addInfant1";
-            this.btn_addInfant1.Size = new System.Drawing.Size(231, 34);
+            this.btn_addInfant1.Size = new System.Drawing.Size(77, 31);
             this.btn_addInfant1.TabIndex = 7;
             this.btn_addInfant1.Text = "OK";
             this.btn_addInfant1.UseVisualStyleBackColor = false;
+            this.btn_addInfant1.Click += new System.EventHandler(this.btn_addInfant1_Click);
             // 
             // label6
             // 
@@ -179,6 +182,9 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.ForeColor = System.Drawing.Color.Black;
             this.comboBox4.FormattingEnabled = true;
@@ -247,7 +253,6 @@
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "InfantAddingForm";
-            this.Text = "InfantAddingForm";
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);

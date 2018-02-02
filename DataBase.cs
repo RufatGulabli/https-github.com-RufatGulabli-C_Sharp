@@ -158,6 +158,10 @@ namespace TrainReservationWinForms
             }
         };
 
+        public static List<Passenger> PassengerList = new List<Passenger>();
+
+        public static List<Infant> InfantList = new List<Infant>();
+
         public List<Train> GetSchedule(Stations from, Stations to, DateTime outbound)
         {
             List<Train> matchedTrains = new List<Train>();

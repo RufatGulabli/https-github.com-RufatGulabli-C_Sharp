@@ -150,6 +150,7 @@
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(125, 20);
             this.dateTimePicker3.TabIndex = 4;
+            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // label24
             // 
@@ -205,6 +206,7 @@
             this.btn_addInfant3.TabIndex = 7;
             this.btn_addInfant3.UseVisualStyleBackColor = false;
             this.btn_addInfant3.Visible = false;
+            this.btn_addInfant3.Click += new System.EventHandler(this.button_AddInfant);
             // 
             // textBox10
             // 
@@ -219,6 +221,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.ForeColor = System.Drawing.Color.Black;
             this.comboBox3.FormattingEnabled = true;
@@ -341,6 +344,7 @@
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(125, 20);
             this.dateTimePicker4.TabIndex = 4;
+            this.dateTimePicker4.ValueChanged += new System.EventHandler(this.dateTimePicker4_ValueChanged);
             // 
             // label18
             // 
@@ -385,9 +389,11 @@
             this.btn_addInfant4.TabIndex = 7;
             this.btn_addInfant4.UseVisualStyleBackColor = false;
             this.btn_addInfant4.Visible = false;
+            this.btn_addInfant4.Click += new System.EventHandler(this.button_AddInfant);
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.ForeColor = System.Drawing.Color.Black;
             this.comboBox2.FormattingEnabled = true;
@@ -532,6 +538,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(125, 20);
             this.dateTimePicker2.TabIndex = 4;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label7
             // 
@@ -558,6 +565,7 @@
             this.btn_addInfant2.TabIndex = 7;
             this.btn_addInfant2.UseVisualStyleBackColor = false;
             this.btn_addInfant2.Visible = false;
+            this.btn_addInfant2.Click += new System.EventHandler(this.button_AddInfant);
             // 
             // textBox1
             // 
@@ -667,6 +675,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.ForeColor = System.Drawing.Color.Black;
             this.comboBox1.FormattingEnabled = true;
@@ -723,6 +732,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(125, 20);
             this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btn_addInfant1
             // 
@@ -826,6 +836,7 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.ForeColor = System.Drawing.Color.Black;
             this.comboBox4.FormattingEnabled = true;
@@ -885,6 +896,7 @@
             this.button11.TabIndex = 0;
             this.button11.Text = "NEXT";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // PassengerDetails4
             // 

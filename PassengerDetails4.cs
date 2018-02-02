@@ -14,14 +14,16 @@ namespace TrainReservationWinForms
     public partial class PassengerDetails4 : UserControl
     {
         public Form1 form1;
+
+        string birthday1 = "";
+        string birthday2 = "";
+        string birthday3 = "";
+        string birthday4 = "";
+
         public PassengerDetails4(Form1 form)
         {
             InitializeComponent();
             form1 = form;
-            //dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            //dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            //dateTimePicker3.Format = DateTimePickerFormat.Custom;
-            //dateTimePicker4.Format = DateTimePickerFormat.Custom;
             foreach (Citizenship item in Enum.GetValues(typeof(Citizenship)))
             {
                 comboBox1.Items.Add(item);
@@ -185,9 +187,77 @@ namespace TrainReservationWinForms
 
         private void button_AddInfant(object sender, EventArgs e)
         {
-            var btn = sender as Button;
-            InfantAddingForm.GetInstance().ShowDialog();
-            
+            try
+            {
+                InfantAddingForm form = new InfantAddingForm();
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            birthday1 = dateTimePicker1.Value.ToString();
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var genderButton1 = panel1.Controls.OfType<Button>().FirstOrDefault(x => x.BackColor == Color.RoyalBlue);
+                var genderButton2 = panel2.Controls.OfType<Button>().FirstOrDefault(x => x.BackColor == Color.RoyalBlue);
+                var genderButton3 = panel3.Controls.OfType<Button>().FirstOrDefault(x => x.BackColor == Color.RoyalBlue);
+                var genderButton4 = panel4.Controls.OfType<Button>().FirstOrDefault(x => x.BackColor == Color.RoyalBlue);
+                if (panel1.Controls.OfType<TextBox>().Any(x => x.Text == "" || x.ForeColor == Color.Red) ||
+                   panel2.Controls.OfType<TextBox>().Any(x => x.Text == "" || x.ForeColor == Color.Red) ||
+                   panel3.Controls.OfType<TextBox>().Any(x => x.Text == "" || x.ForeColor == Color.Red) ||
+                   panel4.Controls.OfType<TextBox>().Any(x => x.Text == "" || x.ForeColor == Color.Red) ||
+                   comboBox1.SelectedIndex < 0 || comboBox2.SelectedIndex < 0 || comboBox3.SelectedIndex < 0
+                   || comboBox4.SelectedIndex < 0 || birthday1 == "" || birthday2 == "" || birthday3 == "" ||
+                   birthday4 == "" || genderButton1 == null || genderButton2 == null || genderButton3 == null || genderButton4 == null)
+                {
+                    throw new Exception("Please fill all details");
+                }
+                if (DataBase.InfantList.Count < 4)
+                    throw new Exception("Please fill all Infants' details");
+                int gender1 = (genderButton1.Text == "MALE") ? 1 : 2;
+                int gender2 = (genderButton2.Text == "MALE") ? 1 : 2;
+                int gender3 = (genderButton3.Text == "MALE") ? 1 : 2;
+                int gender4 = (genderButton4.Text == "MALE") ? 1 : 2;
+
+                Passenger passngr1 = new Passenger((textBoxName.Text + " " + textBoxSurname.Text), textBoxPassport.Text, (Citizenship)comboBox4.SelectedItem, dateTimePicker1.Value, (Gender)gender4);
+                Passenger passngr2 = new Passenger((textBoxName.Text + " " + textBoxSurname.Text), textBoxPassport.Text, (Citizenship)comboBox4.SelectedItem, dateTimePicker1.Value, (Gender)gender4);
+                Passenger passngr3 = new Passenger((textBoxName.Text + " " + textBoxSurname.Text), textBoxPassport.Text, (Citizenship)comboBox4.SelectedItem, dateTimePicker1.Value, (Gender)gender4);
+                Passenger passngr4 = new Passenger((textBoxName.Text + " " + textBoxSurname.Text), textBoxPassport.Text, (Citizenship)comboBox4.SelectedItem, dateTimePicker1.Value, (Gender)gender4);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            birthday2 = dateTimePicker1.Value.ToString();
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            birthday3 = dateTimePicker1.Value.ToString();
+            dateTimePicker3.Format = DateTimePickerFormat.Short;
+        }
+
+        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
+        {
+            birthday4 = dateTimePicker1.Value.ToString();
+            dateTimePicker4.Format = DateTimePickerFormat.Short;
         }
     }
 }

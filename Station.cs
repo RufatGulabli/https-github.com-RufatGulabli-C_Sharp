@@ -8,7 +8,7 @@ namespace TrainReservationWinForms
 {
     public enum Citizenship
     {
-        Azerbaijan = 1,
+        Azerbaijan,
         Russia,
         Georgia,
         Turkey,
@@ -21,8 +21,8 @@ namespace TrainReservationWinForms
 
     public enum Gender
     {
-        Male = 1,
-        Female
+        MALE = 1,
+        FEMALE
     }
 
     public enum Stations
@@ -78,12 +78,6 @@ namespace TrainReservationWinForms
         public Dictionary<Route, int> Stopovers;
     }
 
-    public enum PassengerType
-    {
-        Adult,
-        Child
-    }
-
     public class Passenger
     {
         public string Fullname { get; set; }
@@ -92,18 +86,16 @@ namespace TrainReservationWinForms
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; } 
         public CreditCard PaymentCard { get; set; }
-        public PassengerType Type { get; set; }
         public Infant Infant { get; set; }
 
         public Passenger(string fullname, string passportNo, Citizenship citizen,
-            DateTime birth, Gender sex, PassengerType type)
+            DateTime birth, Gender sex)
         {
             Fullname = fullname;
             PassportNo = passportNo;
             Citizenship = citizen;
             BirthDate = birth;
             Gender = sex;
-            Type = type;
             PaymentCard = null;
             Infant = null;
         }
